@@ -1,26 +1,46 @@
 # Ninjutsu Master
 
-The repository contains the downloaded static frontend and an independent API service.
+Ninjutsu Master is a complete club-management platform for martial arts academies.
 
-## Run locally
+## Website Features
 
-```bash
-npm install
-npm start
-```
+- Public introduction pages for the academy, its instructors, disciplines, courses and facilities
+- Course catalogue with published course information, schedules, duration and pricing
+- Online course registration and trial-session booking
+- Member registration, login, password recovery and account management
+- Personal member dashboard with registrations, payments, wallet balance, notifications and progress history
+- Student profile management with contact details, emergency contact and martial-arts information
+- Attendance history and course participation tracking
+- Belt and rank progression history
+- Exams, exam results, certificates and promotion records
+- Club calendar with public events and activities
+- News and announcements section
+- FAQ and contact pages
+- Image gallery
+- Competitions and upcoming tournament information
+- Store with products and orders
+- Payment records, tuition tracking and payment summaries
 
-The site and API are served at `http://localhost:8787`. Set `DATABASE_PATH` to keep the SQLite database outside the repository, and set `COOKIE_SECURE=true` when serving over HTTPS.
+## Management Features
 
-## API foundation
+- Admin dashboard with club statistics and operational summaries
+- Student management with search, status filtering and profile editing
+- Course, discipline, instructor and branch management
+- Registration approval and waitlist workflows
+- Attendance management by course and session date
+- Tuition and payment management
+- Wallet and wallet-transaction management
+- News, FAQ, gallery, calendar and competition content management
+- Exam scheduling, result entry and belt promotion management
+- Certificate management
+- Support ticket and notification management
+- Site settings and configurable club information
+- Developer area for users, bans, passwords, settings and CMS administration
 
-- `GET /api/health`
-- `POST /api/auth/register` with `{ "email", "password" }`
-- `POST /api/auth/login` with `{ "email", "password" }`
-- `POST /api/auth/logout`
-- `GET /api/auth/me`
-- `GET /api/entities/:type`
-- `POST/PATCH/DELETE /api/entities/:type[/:id]` for staff users
+## Security
 
-Passwords are hashed with bcrypt. Sessions are stored server-side as SHA-256 hashes and sent in an HTTP-only cookie. Helmet, CORS, JSON size limits, input validation, rate limiting, SQLite foreign keys, and WAL mode are enabled by default.
-
-The downloaded frontend still contains the original Base44 client inside its compiled bundle. The new API is intentionally kept separate until that client layer is replaced and each public/admin workflow can be tested against the local database.
+- Secure password hashing
+- Server-managed authenticated sessions
+- Role-based access for member, admin and developer workflows
+- Request validation and rate limiting
+- Protected administrative data operations
